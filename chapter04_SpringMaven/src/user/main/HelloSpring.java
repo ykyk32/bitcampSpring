@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import user.service.UserService;
-
+@Component
 public class HelloSpring {
 
 	public void menu(ApplicationContext context) {
@@ -38,6 +39,8 @@ public class HelloSpring {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
 		HelloSpring helloSpring= (HelloSpring) context.getBean("helloSpring");
 		helloSpring.menu(context);
+		
+		System.out.println("프로그램을 종료합니다.");
 	}
 
 }

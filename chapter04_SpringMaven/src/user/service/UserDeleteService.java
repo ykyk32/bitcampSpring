@@ -2,12 +2,15 @@ package user.service;
 
 import java.util.Scanner;
 
-import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
+@Service
 public class UserDeleteService implements UserService {
-	@Setter
+	@Autowired
 	private UserDAO userDAO;
 	@Override
 	public void execute() {
@@ -31,7 +34,7 @@ public class UserDeleteService implements UserService {
 				 + userDTO.getPwd());
 		System.out.println();
 		
-		userDAO.delete(userDTO);
+		userDAO.delete(id);
 		System.out.println("DB의 내용을 삭제하였습니다.");
 		}
 	}

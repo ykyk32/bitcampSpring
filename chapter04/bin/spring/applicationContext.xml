@@ -44,25 +44,25 @@
 	<bean id ="helloSpring" class="user.main.HelloSpring"/>
 	<bean id="userInsertService" class="user.service.UserInsertService">
 		<property name="userDTO" ref="userDTO"></property>
-		<property name ="userDAO" ref="userDAO"></property>
+		<property name ="userDAO" ref="userDAOImpl"></property>
 	</bean>
 	
 	<bean id="userSelectService" class="user.service.UserSelectService">
-		<property name ="userDAO" ref="userDAO"></property>
+		<property name ="userDAO" ref="userDAOImpl"></property>
 	</bean>
 	
 	<bean id="userUpdateService" class="user.service.UserUpdateService">
-		<property name="userDAO" ref="userDAO"></property>
+		<property name="userDAO" ref="userDAOImpl"></property>
 	</bean>
 	<bean id="userDeleteService" class="user.service.UserDeleteService">
-		<property name="userDAO" ref="userDAO"></property>
+		<property name="userDAO" ref="userDAOImpl"></property>
 	</bean>
 
 	
 	
 	<bean id="userDTO" class="user.bean.UserDTO"/>
 	
-	<bean id="userDAO"	class="user.dao.UserDAOImpl">
+	<bean id="userDAOImpl"	class="user.dao.UserDAOImpl">
 		<!-- <property name="jdbcTemplate" ref="jdbcTemplate"/> -->
 		<property name="dataSource" ref="dataSource"></property> 
 	</bean>
