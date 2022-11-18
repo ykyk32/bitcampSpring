@@ -1,5 +1,7 @@
 package user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,16 @@ public class UserDAOMyBatis implements UserDAO {
 	public void write(UserDTO userDTO) {
 		sqlSession.insert("userSQL.write",userDTO);
 		
+	}	
+
+	@Override
+	public List<UserDTO> getUserList() {
+		
+		return sqlSession.selectList("userSQL.getUserList");
 	}
 	
+	@Override
 	public UserDTO getUser(String id) {
-		return sqlSession.selectOne("userSQL.getList", id);
+		return sqlSession.selectOne("userSQL.getUser", id);
 	}
-
 }

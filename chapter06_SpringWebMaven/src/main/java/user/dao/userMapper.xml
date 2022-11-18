@@ -15,7 +15,7 @@
  	<insert id="write" parameterType="user.bean.UserDTO"><!-- import없으니까 풀쿼리네임 써야한다 -->
  		insert into usertable values(#{name},#{id},#{pwd})
  	</insert>
- 	 <select id ="getList" resultMap="userResult">
+ 	 <select id ="getUserList" resultMap="userResult">
  	 	select * from usertable
  	 </select>
  	 <select id="getUser" parameterType="String" resultType="user.bean.UserDTO"><!-- java.lang.Sting //user--> 	 

@@ -3,7 +3,7 @@
   <display-name>chapter06_SpringWebMaven</display-name>
   
   
-  <!-- 웹과 독립된 WAC -->
+  <!-- 웹과 독립된 WAC Web Application Context -->
   <context-param>
   		<param-name>contextConfigLocation</param-name>
   		<param-value>/WEB-INF/spring/root-context.xml</param-value>

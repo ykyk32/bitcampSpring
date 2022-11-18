@@ -1,5 +1,7 @@
 package user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import user.bean.UserDTO;
@@ -25,9 +28,33 @@ public class UserController {
 		return "user/writeForm";
 	}
 	@PostMapping(value="write")
-	@ResponseBody//dispatch로 가지마-비동기처리
+	@ResponseBody//void니까-dispatch로 가지마-비동기처리
 	public void write(@ModelAttribute UserDTO userDTO) {
-		userService.write(userDTO);
-		
+		userService.write(userDTO);		
+	}
+	@GetMapping(value="list")
+	public String list() {
+		return "user/list";
+	}
+	@PostMapping(value="getUserList")
+	@ResponseBody//알아서 json타입으로 바꿔줌
+	public List<UserDTO> getUserList(){
+		//DB연결가능하지만 비추
+		return userService.getUserList();
+	}
+	@PostMapping(value="isExistId")
+	@ResponseBody
+	public String isExistId(@RequestParam String id) {
+		return userService.isExistId(id);
+	}
+	@GetMapping(value="updateForm")
+	public String updateForm() {
+		return "user/updateForm";
+	}
+	
+	@PostMapping(value="getUser")
+	@ResponseBody
+	public UserDTO  getUser(@RequestParam String id) {
+		return userService.getUser(id);
 	}
 }
