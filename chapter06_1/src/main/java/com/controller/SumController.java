@@ -45,19 +45,19 @@ public class SumController {
 //		return mav;
 //	}
 	
-//	@GetMapping(value="/result.do")
-//	public String result(@RequestParam Map<String,String> map, ModelMap modelMap){
-//		modelMap.put("x", map.get("x"));
-//		modelMap.put("y", map.get("y"));
-//		
-//		return "sum/result";
-//	}
-	
 	@GetMapping(value="/result.do")
-	public String result(@ModelAttribute SumDTO sumDTO, Model model){
-		model.addAttribute("x",sumDTO.getX());
-		model.addAttribute("y",sumDTO.getY());
+	public String result(@RequestParam Map<String,String> map, ModelMap modelMap){
+		modelMap.put("x", map.get("x"));
+		modelMap.put("y", map.get("y"));
 		
 		return "sum/result";
 	}
+	
+//	@GetMapping(value="/result.do")
+//	public String result(@ModelAttribute SumDTO sumDTO, Model model){
+//		model.addAttribute("x",sumDTO.getX());
+//		model.addAttribute("y",sumDTO.getY());
+//		
+//		return "sum/result";
+//	}
 }
