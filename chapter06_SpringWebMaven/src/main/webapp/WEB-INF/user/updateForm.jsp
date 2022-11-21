@@ -15,7 +15,7 @@
 </head>
 <body>
 <h3><img src="../image/qq.png" width="50" height="50" 
-onclick="location.href='/chapter06_SpringWebMaven/'" style="cursor: pointer;"/> 회원가입 </h3>
+onclick="location.href='/chapter06_SpringWebMaven/'" style="cursor: pointer;"/> 회원정보수정 </h3>
 <hr/>
 
 <p>
@@ -45,7 +45,7 @@ onclick="location.href='/chapter06_SpringWebMaven/'" style="cursor: pointer;"/> 
 		<tr>
 			<td align="center">비밀번호</td>
 			<td>
-				<input type="text" name="pwd" id="pwd" style="width: 150px">
+				<input type="password" name="pwd" id="pwd" style="width: 150px">
 				<div id="pwdDiv"></div>
 			</td>
 		</tr>

@@ -44,6 +44,18 @@ public class UserServiceImpl implements UserService {
 		//DB
 		return userDAO.getUser(id);
 	}
+
+	@Override
+	public void update(UserDTO userDTO) {
+		userDAO.update(userDTO);
+		
+	}
+
+	@Override
+	public void delete(String id) {
+		userDAO.delete(id);
+		
+	}
 	
 
 }

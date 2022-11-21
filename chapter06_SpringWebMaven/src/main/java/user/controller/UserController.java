@@ -57,4 +57,18 @@ public class UserController {
 	public UserDTO  getUser(@RequestParam String id) {
 		return userService.getUser(id);
 	}
+	@PostMapping(value="update")
+	@ResponseBody//void니까-dispatch로 가지마-비동기처리
+	public void update(@ModelAttribute UserDTO userDTO) {
+		userService.update(userDTO);		
+	}
+	@GetMapping(value="deleteForm")
+	public String deleteForm() {
+		return "user/deleteForm";
+	}
+	@PostMapping(value="delete")
+	@ResponseBody//void니까-dispatch로 가지마-비동기처리
+	public void delete(@RequestParam String id) {
+		userService.delete(id);		
+	}
 }

@@ -23,7 +23,7 @@ $(function(){
 					
 					$('#resultDiv').text('찾고자 하는 아이디가 없습니다');
 					$('#resultDiv').css('color', 'red');
-					$('#resultDiv').css('font-weight', 'red');
+					$('#resultDiv').css('font-weight', 'bold');
 				}else{
 					$('#updateDiv').show();
 					
@@ -45,16 +45,33 @@ $('#resetBtn').click(function(){
 });
 
 
+$('#updateBtn').click(function(){
+	$('#nameDiv').empty();
+	$('#pwdDiv').empty();
 
-
-
-
-
-
-
-
-
-
-
-
+	  if($('#name').val() ==''){
+         $('#nameDiv').text('이름을입력해주세요');
+          $('#name').focus();
+         return false;
+      }      
+      else if($('#pwd').val() ==''){
+         $('#pwdDiv').text('비밀번호를 입력해주세요');
+         $('#pwd').focus();
+         return false;
+      }else{
+			$.ajax({
+				type: 'post',
+				url: '/chapter06_SpringWebMaven/user/update',
+				data: $('#updateForm').serialize(),
+				success: function(){
+					alert("회원정보를 수정하였습니다.");
+					location.href='/chapter06_SpringWebMaven/user/list';
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+	
+});
 

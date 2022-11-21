@@ -32,4 +32,16 @@ public class UserDAOMyBatis implements UserDAO {
 	public UserDTO getUser(String id) {
 		return sqlSession.selectOne("userSQL.getUser", id);
 	}
+
+	@Override
+	public void update(UserDTO userDTO) {
+		sqlSession.update("userSQL.update", userDTO);
+		
+	}
+
+	@Override
+	public void delete(String id) {
+		sqlSession.delete("userSQL.delete", id);
+		
+	}
 }
