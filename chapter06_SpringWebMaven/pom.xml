@@ -83,6 +83,8 @@
           <artifactId>jstl</artifactId>
           <version>1.2</version>
       </dependency>
+      
+      
        <!-- JSON --> 
        <dependency>
 		    <groupId>net.sf.json-lib</groupId>
@@ -103,8 +105,25 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.14.0</version>
 		</dependency>
-           
+		
+		
+       <!-- 파일 업로드 -->
+      <dependency>
+    		<groupId>commons-io</groupId>
+    		<artifactId>commons-io</artifactId>
+    		<version>2.11.0</version>
+	  </dependency>
+      <dependency>
+    		<groupId>commons-fileupload</groupId>
+    		<artifactId>commons-fileupload</artifactId>
+   			<version>1.4</version>
+	  </dependency>
       
+      
+      
+      
+      
+      <!-- 롬복 -->
       <dependency>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
